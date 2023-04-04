@@ -2,28 +2,41 @@ package com.softserve.edu.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-public class ShoppingCartEmptyPage extends BaseObject {
-    private String urlText = "route=checkout";
-    private TopPart topPart;
-    By emptyCartLabel = By.xpath("//h1//following::p[1]");
-    By continueButton = By.xpath("//a[contains(text(), 'Continue')]");
+public class ShoppingCartEmptyPage extends TopPart {
+    private WebElement emptyCartLabel;
+    private WebElement continueButton;
 
     public ShoppingCartEmptyPage(WebDriver driver) {
         super(driver);
-        topPart = new TopPart(driver);
+        initElements();
+    }
+    private void initElements(){
+        emptyCartLabel = driver.findElement(By.xpath("//h1//following::p[1]"));
+        continueButton = driver.findElement(By.xpath("//a[contains(text(), 'Continue')]"));
     }
 
-    /**
-     * Get the content of the label
-     */
-    public String getLabelContent() {
-        waitForUrlContainsText(urlText);
-        return getText(emptyCartLabel);
+    public WebElement getEmptyCartLabel() {
+        return emptyCartLabel;
     }
+
+    public WebElement getContinueButton() {
+        return continueButton;
+    }
+
+    public void clickContinueButton(){
+        getContinueButton().click();
+    }
+
+    public String getEmptyCartLabelContent(){
+        return getEmptyCartLabel().getText();
+    }
+
+    //Business Logic
 
     public HomePage clickOnContinueButton(){
-        find(continueButton).click();
+        clickContinueButton();
         return new HomePage(driver);
     }
 }
