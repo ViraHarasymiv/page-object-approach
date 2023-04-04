@@ -3,19 +3,12 @@ package com.softserve.edu.pages;
 import com.softserve.edu.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BaseObject{
+public class HomePage extends BasePage{
     private final String HOME_PAGE_URL_TEXT = "common/home";
     private final String HOME_PAGE = ConfigReader.get().getHomePageUrl();
-    //components
-    private TopPart topPart;
 
     public HomePage(WebDriver driver) {
         super(driver);
-        topPart = new TopPart(driver);
-    }
-
-    public TopPart getTopPart() {
-        return topPart;
     }
 
     /**
