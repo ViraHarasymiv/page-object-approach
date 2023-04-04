@@ -32,9 +32,7 @@ public class ShoppingCartEmptyPage extends TopPart {
     public String getEmptyCartLabelContent(){
         return getEmptyCartLabel().getText();
     }
-
     //Business Logic
-
     public HomePage clickOnContinueButton(){
         clickContinueButton();
         return new HomePage(driver);

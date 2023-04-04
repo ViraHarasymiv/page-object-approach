@@ -43,8 +43,7 @@ public class TestRunnerFirst {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        presentationSleep(); // For Presentation ONLY
-        // driver.close();
+        presentationSleep();
         if (driver != null) {
             driver.quit();
         }
@@ -53,19 +52,15 @@ public class TestRunnerFirst {
     @BeforeMethod
     public void beforeMethod() {
         driver.get(BASE_URL);
-        presentationSleep(); // For Presentation ONLY
+        presentationSleep();
     }
 
     @AfterMethod
     public void afterMethod() {
-        presentationSleep(); // For Presentation ONLY
-        // logout; clear cache; delete cookie; delete session;
-        // Save Screen;
+        presentationSleep();
     }
 
     protected HomePage loadApplication() {
-        //driver.get(BASE_URL);
         return new HomePage(driver);
-        //return new HomePage(getDriver());
     }
 }
