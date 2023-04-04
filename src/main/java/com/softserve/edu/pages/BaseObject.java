@@ -41,8 +41,17 @@ public class BaseObject {
     /**
      * Get URL of current page from browser
      */
-    public String getCurrentUrl() {
+    public String getCurrentUrl(String text) {
+        waitForUrlContainsText(text);
         return driver.getCurrentUrl();
+    }
+
+    /**
+     * Click on the webElement
+     */
+    public void click(By locator){
+        waitForVisibilityOfElement(locator);
+        find(locator).click();
     }
 
     /**

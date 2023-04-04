@@ -23,7 +23,7 @@ public class ShoppingCartEmptyPage extends BaseObject {
     }
 
     public HomePage clickOnContinueButton(){
-        find(continueButton).click();
+        click(continueButton);
         return new HomePage(driver);
     }
 }

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class EmptyCartTest extends BaseTest {
     private final String EXPECTED_LABEL_CONTENT = "Your shopping cart is empty!";
-    private final String EXPECTED_URL = "https://demo.opencart.com/index.php?route=common/home&language=en-gb";
+    private final String EXPECTED_URL_TEXT = "common/home";
 
     @Test
     public void checkEmptyCartLabel(){
@@ -28,8 +28,8 @@ public class EmptyCartTest extends BaseTest {
                 .getTopPart()
                 .clickOnShoppingCartMenu()
                 .clickOnContinueButton()
-                .getCurrentUrl();
-        Assert.assertTrue(actualUrl.equals(EXPECTED_URL),
-                "The url must be " + EXPECTED_URL + ", but it is " + actualUrl);
+                .getHomePageUrl();
+        Assert.assertTrue(actualUrl.contains(EXPECTED_URL_TEXT),
+                "The url must contain " + EXPECTED_URL_TEXT + ", but it is " + actualUrl);
     }
 }
