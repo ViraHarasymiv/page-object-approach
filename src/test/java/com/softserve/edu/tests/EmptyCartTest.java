@@ -12,7 +12,8 @@ public class EmptyCartTest extends BaseTest {
     @Test
     public void checkEmptyCartLabel(){
         String actualLabelContent = new HomePage(driver)
-                .getOpenCart()
+                .openHomePage()
+                .getTopPart()
                 .clickOnShoppingCartMenu()
                 .getLabelContent();
         Assert.assertTrue(actualLabelContent.contains(EXPECTED_LABEL_CONTENT),
@@ -23,7 +24,8 @@ public class EmptyCartTest extends BaseTest {
     @Test
     public void checkContinueButton(){
         String actualUrl = new HomePage(driver)
-                .getOpenCart()
+                .openHomePage()
+                .getTopPart()
                 .clickOnShoppingCartMenu()
                 .clickOnContinueButton()
                 .getCurrentUrl();
