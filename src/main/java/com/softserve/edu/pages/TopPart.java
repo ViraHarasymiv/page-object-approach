@@ -15,7 +15,6 @@ public class TopPart extends BaseObject{
      * Open ShoppingCartEmptyPage by clicking on the Shopping Cart menu
      */
     public ShoppingCartEmptyPage clickOnShoppingCartMenu(){
-        waitForVisibilityOfElement(shoppingCartMenu);
         click(shoppingCartMenu);
         return new ShoppingCartEmptyPage(driver);
     }
