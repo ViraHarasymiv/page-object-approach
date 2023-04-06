@@ -2,7 +2,7 @@
 
 ## [branch version-first](https://github.com/ViraHarasymiv/page-object-approach/tree/version-first) - solution with BaseObject.java and BasePage.java 
 
-## [branch version-second](https://github.com/ViraHarasymiv/page-object-approach/tree/version-second) - solution based on [ti006 project](https://github.com/softservedata/ti006/tree/pageobj)
+## [branch version-second](https://github.com/ViraHarasymiv/page-object-approach/tree/version-second) - solution based on the [ti006 project](https://github.com/softservedata/ti006/tree/pageobj)
 
 =========================================================================
 
